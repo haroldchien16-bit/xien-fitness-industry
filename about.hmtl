@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Xien Fitness Industry</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Xien Fitness Industry</h1>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>About Xien Fitness Industry</h2>
+
+        <p>
+            Xien Fitness Industry is a fitness-focused shop created for people
+            who want to improve their strength, health, and overall lifestyle.
+        </p>
+
+        <p>
+            I started this shop because fitness has become an important part
+            of my life. I wanted to create a simple place where people can
+            find products that can support them in reaching their fitness goals.
+        </p>
+
+        <h2>About the Owner</h2>
+
+        <p>
+            My name is Harold Chien L. Santiago, and I am the owner of
+            Xien Fitness Industry. I created this shop to combine my interest
+            in fitness with my creativity and skills in web development.
+        </p>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Xien Fitness Industry</p>
+    </footer>
+
+</body>
+</html>
