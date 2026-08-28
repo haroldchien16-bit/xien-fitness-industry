@@ -71,6 +71,163 @@
         <li>Good for short-term fitness goals</li>
     </ul>
 
+<h2>Order Enquiry Form</h2>
+
+<p>
+Interested in the Monthly Membership?
+Fill out the form below to send an order enquiry.
+</p>
+
+<form>
+
+    <!-- Quantity -->
+
+    <label for="quantity">
+        Quantity:
+    </label>
+
+    <input
+        type="number"
+        id="quantity"
+        name="quantity"
+        min="1"
+        max="20"
+        required
+    >
+
+
+    <br><br>
+
+
+    <!-- Delivery Method -->
+
+    <fieldset>
+
+        <legend>
+            How would you like to receive your membership?
+        </legend>
+
+        <input
+            type="radio"
+            id="pickup"
+            name="delivery"
+            value="pickup"
+            required
+        >
+
+        <label for="pickup">
+            Pick-up
+        </label>
+
+        <br>
+
+        <input
+            type="radio"
+            id="delivery"
+            name="delivery"
+            value="delivery"
+        >
+
+        <label for="delivery">
+            Home Delivery
+        </label>
+
+        <br>
+
+        <input
+            type="radio"
+            id="meetup"
+            name="delivery"
+            value="meetup"
+        >
+
+        <label for="meetup">
+            Meet-up
+        </label>
+
+    </fieldset>
+
+
+    <br>
+
+
+    <!-- Optional Extras -->
+
+    <fieldset>
+
+        <legend>
+            Optional Extras
+        </legend>
+
+        <input
+            type="checkbox"
+            id="gift"
+            name="extras"
+            value="gift"
+        >
+
+        <label for="gift">
+            Gift Wrapping
+        </label>
+
+        <br>
+
+        <input
+            type="checkbox"
+            id="express"
+            name="extras"
+            value="express"
+        >
+
+        <label for="express">
+            Express Handling
+        </label>
+
+        <br>
+
+        <input
+            type="checkbox"
+            id="receipt"
+            name="extras"
+            value="receipt"
+        >
+
+        <label for="receipt">
+            Printed Receipt
+        </label>
+
+    </fieldset>
+
+
+    <br>
+
+
+    <!-- Contact Email -->
+
+    <label for="email">
+        Contact Email:
+    </label>
+
+    <input
+        type="email"
+        id="email"
+        name="email"
+        required
+    >
+
+
+    <br><br>
+
+
+    <!-- Submit -->
+
+    <button type="submit">
+        Submit Order Enquiry
+    </button>
+
+</form>
+
+    
 </main>
 
 <footer>
