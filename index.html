@@ -26,6 +26,7 @@
             line-height: 1.6;
         }
 
+
         /* =========================
            NAVIGATION
         ========================= */
@@ -140,6 +141,20 @@
         .hero-button:hover {
             transform: translateY(-4px);
             background: #ddd;
+        }
+
+        .order-button {
+            margin-left: 10px;
+
+            background: transparent;
+            color: white;
+
+            border: 1px solid white;
+        }
+
+        .order-button:hover {
+            background: white;
+            color: black;
         }
 
 
@@ -358,6 +373,21 @@
 
         }
 
+        @media (max-width: 600px) {
+
+            .hero-button {
+                display: block;
+                width: 100%;
+                max-width: 300px;
+                margin: 10px auto;
+            }
+
+            .order-button {
+                margin: 10px auto;
+            }
+
+        }
+
     </style>
 
 </head>
@@ -421,6 +451,13 @@
             href="#memberships"
         >
             EXPLORE MEMBERSHIPS
+        </a>
+
+        <a
+            class="hero-button order-button"
+            href="products/monthly-membership.html"
+        >
+            ORDER ENQUIRY
         </a>
 
     </div>
@@ -546,7 +583,7 @@
 
                 <a
                     class="membership-button"
-                    href="products/monthly-membership.html"
+                    href="products/6-month-membership.html"
                 >
                     VIEW DETAILS
                 </a>
@@ -584,7 +621,7 @@
 
                 <a
                     class="membership-button"
-                    href="products/monthly-membership.html"
+                    href="products/annual-membership.html"
                 >
                     VIEW DETAILS
                 </a>
