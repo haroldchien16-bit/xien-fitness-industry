@@ -1,242 +1,415 @@
 
+/* =========================
+   VARIABLES
+========================= */
 
 :root {
-    --brand-color: #e63946;
-    --dark-ink: #111111;
-    --muted-grey: #666666;
-    --light-background: #f5f5f5;
+    --brand-color: #ffffff;
+    --dark-ink: #0b0b0b;
+    --muted-grey: #aaa;
+    --light-background: #111;
 }
 
 
+/* =========================
+   BASE STYLES
+========================= */
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--dark-ink);
+    color: var(--brand-color);
     line-height: 1.6;
-    color: var(--dark-ink);
-    background-color: var(--light-background);
 }
 
 
+/* =========================
+   LAYOUT - HEADER & NAVIGATION
+========================= */
 
 header {
-    background-color: var(--dark-ink);
-    color: white;
-    padding: 25px;
-    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 7%;
+
+    background: rgba(11, 11, 11, 0.95);
+    border-bottom: 1px solid #252525;
 }
 
-header h1 {
-    margin: 0;
+.logo {
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 1px;
 }
 
-header p {
-    margin: 5px 0 15px;
+.logo span {
     color: var(--muted-grey);
 }
 
-
-/* Navigation */
-
-nav {
-    margin-top: 15px;
-}
-
 nav ul {
+    display: flex;
+    gap: 30px;
     list-style: none;
     padding: 0;
-    margin: 0;
 }
 
 nav li {
     display: inline-block;
-    margin: 0 10px;
 }
 
 nav a {
-    color: white;
+    color: var(--brand-color);
     text-decoration: none;
     font-weight: bold;
-}
-
-nav a:hover {
-    color: var(--brand-color);
-}
-
-
-
-main {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 40px 20px;
-}
-
-main h1,
-main h2 {
-    color: var(--dark-ink);
-}
-
-main h2 {
-    margin-top: 30px;
-}
-
-
-
-footer {
-    background-color: var(--dark-ink);
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-}
-
-
-.membership-section {
-    background-color: var(--dark-ink);
-    color: white;
-    padding: 50px 30px;
-    text-align: center;
-}
-
-.membership-section h2 {
-    color: white;
-    font-size: 36px;
-    margin-bottom: 40px;
-}
-
-.membership-cards {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-}
-
-.membership-cards article {
-    background-color: #1f1f1f;
-    width: 300px;
-    border-radius: 18px;
-    overflow: hidden;
-    border: 1px solid var(--muted-grey);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
     transition: 0.3s;
 }
 
-.membership-cards article:hover {
-    transform: translateY(-10px);
+nav a:hover {
+    color: var(--muted-grey);
 }
 
-.membership-cards img {
+
+/* =========================
+   LAYOUT - MAIN / HERO
+========================= */
+
+main {
     width: 100%;
-    height: 180px;
+}
+
+.hero {
+    min-height: 85vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 80px 20px;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.65),
+            rgba(0,0,0,0.9)
+        ),
+        url("harold-chien-l.-santiago.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 8vw, 90px);
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: -3px;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: var(--muted-grey);
+}
+
+.hero p {
+    font-size: 20px;
+    color: #ccc;
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   COMPONENT - HERO BUTTONS
+========================= */
+
+.hero-button {
+    display: inline-block;
+
+    padding: 15px 30px;
+
+    background: var(--brand-color);
+    color: var(--dark-ink);
+
+    text-decoration: none;
+    font-weight: bold;
+
+    border-radius: 8px;
+
+    transition: 0.3s;
+}
+
+.hero-button:hover {
+    transform: translateY(-4px);
+    background: #ddd;
+}
+
+.order-button {
+    margin-left: 10px;
+
+    background: transparent;
+    color: var(--brand-color);
+
+    border: 1px solid var(--brand-color);
+}
+
+.order-button:hover {
+    background: var(--brand-color);
+    color: var(--dark-ink);
+}
+
+
+/* =========================
+   COMPONENT - ABOUT / INTRO
+========================= */
+
+.intro {
+    max-width: 1000px;
+    margin: auto;
+
+    padding: 100px 30px;
+
+    text-align: center;
+}
+
+.intro h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.intro p {
+    color: var(--muted-grey);
+    max-width: 700px;
+    margin: auto;
+    font-size: 18px;
+}
+
+
+/* =========================
+   COMPONENT - MEMBERSHIPS
+========================= */
+
+.membership-section {
+    padding: 100px 7%;
+
+    background: #111;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+    font-size: 45px;
+    text-transform: uppercase;
+}
+
+.section-title p {
+    color: #999;
+}
+
+.membership-cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+    max-width: 1200px;
+    margin: auto;
+}
+
+.membership-card {
+    background: #191919;
+
+    border: 1px solid #2d2d2d;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    transition: 0.3s;
+}
+
+.membership-card:hover {
+    transform: translateY(-8px);
+    border-color: #777;
+}
+
+.membership-card img {
+    width: 100%;
+    height: 220px;
+
     object-fit: cover;
+
+    display: block;
 }
 
 .membership-content {
-    padding: 25px;
-    text-align: left;
+    padding: 30px;
 }
 
 .membership-content h3 {
     font-size: 25px;
-    margin-top: 0;
+    margin-bottom: 10px;
 }
 
-.membership-price {
-    font-size: 27px;
-    font-weight: bold;
-    color: var(--brand-color);
+.price {
+    font-size: 30px;
+    font-weight: 900;
+    margin-bottom: 15px;
 }
 
-.membership-description {
-    color: #cccccc;
-    line-height: 1.6;
+.description {
+    color: #999;
+    margin-bottom: 25px;
 }
 
-.membership-cards a {
-    color: var(--brand-color);
-    font-weight: bold;
+
+/* =========================
+   COMPONENT - MEMBERSHIP BUTTON
+========================= */
+
+.membership-button {
+    display: inline-block;
+
+    width: 100%;
+
+    padding: 13px;
+
+    text-align: center;
+
+    background: var(--brand-color);
+    color: var(--dark-ink);
+
     text-decoration: none;
+
+    border-radius: 7px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
 }
 
-.membership-cards a:hover {
-    text-decoration: underline;
+.membership-button:hover {
+    background: #ccc;
 }
+
+
+/* =========================
+   COMPONENT - POPULAR CARD
+========================= */
 
 .popular {
-    border: 2px solid var(--brand-color) !important;
+    border: 2px solid var(--brand-color);
+    transform: scale(1.03);
 }
 
-.popular-badge {
+.popular:hover {
+    transform: scale(1.03) translateY(-8px);
+}
+
+.popular-label {
     display: inline-block;
-    background-color: var(--brand-color);
-    color: white;
+
     padding: 6px 12px;
+
+    margin-bottom: 12px;
+
+    background: var(--brand-color);
+    color: var(--dark-ink);
+
     border-radius: 20px;
+
     font-size: 12px;
     font-weight: bold;
-    margin-bottom: 15px;
 }
 
 
+/* =========================
+   LAYOUT - FOOTER
+========================= */
 
-form {
-    background-color: white;
-    padding: 25px;
-    border-radius: 10px;
-    margin-top: 20px;
+footer {
+    text-align: center;
+
+    padding: 40px 20px;
+
+    background: #050505;
+
+    color: #777;
+
+    border-top: 1px solid #222;
 }
 
-fieldset {
-    border: 1px solid #dddddd;
-    padding: 20px;
+
+/* =========================
+   RESPONSIVE / MOBILE
+========================= */
+
+@media (max-width: 850px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        gap: 18px;
+    }
+
+    .membership-cards {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+
+    .popular {
+        transform: none;
+    }
+
+    .popular:hover {
+        transform: translateY(-8px);
+    }
+
+    .hero {
+        min-height: 75vh;
+    }
 }
 
-input,
-select,
-textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    border: 1px solid #cccccc;
-    border-radius: 5px;
-}
+@media (max-width: 600px) {
 
-textarea {
-    min-height: 120px;
-}
+    .hero-button {
+        display: block;
+        width: 100%;
+        max-width: 300px;
+        margin: 10px auto;
+    }
 
-button {
-    background-color: var(--brand-color);
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
+    .order-button {
+        margin: 10px auto;
+    }
 }
-
-button:hover {
-    opacity: 0.85;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: white;
-}
-
-th,
-td {
-    padding: 12px;
-    border: 1px solid #dddddd;
-    text-align: left;
-}
-
 th {
     background-color: var(--dark-ink);
     color: white;
