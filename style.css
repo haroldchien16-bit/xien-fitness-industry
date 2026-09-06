@@ -1,0 +1,243 @@
+
+
+:root {
+    --brand-color: #e63946;
+    --dark-ink: #111111;
+    --muted-grey: #666666;
+    --light-background: #f5f5f5;
+}
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--dark-ink);
+    background-color: var(--light-background);
+}
+
+
+
+header {
+    background-color: var(--dark-ink);
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header p {
+    margin: 5px 0 15px;
+    color: var(--muted-grey);
+}
+
+
+/* Navigation */
+
+nav {
+    margin-top: 15px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: var(--brand-color);
+}
+
+
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+main h1,
+main h2 {
+    color: var(--dark-ink);
+}
+
+main h2 {
+    margin-top: 30px;
+}
+
+
+
+footer {
+    background-color: var(--dark-ink);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+
+.membership-section {
+    background-color: var(--dark-ink);
+    color: white;
+    padding: 50px 30px;
+    text-align: center;
+}
+
+.membership-section h2 {
+    color: white;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.membership-cards {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.membership-cards article {
+    background-color: #1f1f1f;
+    width: 300px;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid var(--muted-grey);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transition: 0.3s;
+}
+
+.membership-cards article:hover {
+    transform: translateY(-10px);
+}
+
+.membership-cards img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.membership-content {
+    padding: 25px;
+    text-align: left;
+}
+
+.membership-content h3 {
+    font-size: 25px;
+    margin-top: 0;
+}
+
+.membership-price {
+    font-size: 27px;
+    font-weight: bold;
+    color: var(--brand-color);
+}
+
+.membership-description {
+    color: #cccccc;
+    line-height: 1.6;
+}
+
+.membership-cards a {
+    color: var(--brand-color);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.membership-cards a:hover {
+    text-decoration: underline;
+}
+
+.popular {
+    border: 2px solid var(--brand-color) !important;
+}
+
+.popular-badge {
+    display: inline-block;
+    background-color: var(--brand-color);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+
+
+form {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+fieldset {
+    border: 1px solid #dddddd;
+    padding: 20px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+textarea {
+    min-height: 120px;
+}
+
+button {
+    background-color: var(--brand-color);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+th,
+td {
+    padding: 12px;
+    border: 1px solid #dddddd;
+    text-align: left;
+}
+
+th {
+    background-color: var(--dark-ink);
+    color: white;
+}
