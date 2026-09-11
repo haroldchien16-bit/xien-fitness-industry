@@ -1,3 +1,4 @@
+```css
 /* =========================
    VARIABLES
 ========================= */
@@ -78,7 +79,7 @@ header h1 {
 }
 
 
-/* Navigation uses Flexbox */
+/* Navigation */
 
 nav ul {
     display: flex;
@@ -303,12 +304,15 @@ main > ul li {
     color: var(--muted-grey);
 }
 
-.membership-cards {
-    display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+/* =========================
+   COMPONENT - PRODUCT GRID
+========================= */
 
-    gap: 25px;
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
 
     max-width: 1200px;
     margin: auto;
@@ -320,6 +324,8 @@ main > ul li {
 ========================= */
 
 .product-card {
+    flex: 1 1 240px;
+
     background: var(--card-background);
 
     border-radius: 16px;
@@ -327,8 +333,6 @@ main > ul li {
     padding: 20px;
 
     border-left: 5px solid var(--brand);
-
-    margin-bottom: 25px;
 
     overflow: hidden;
 
@@ -592,11 +596,6 @@ footer p {
         gap: 18px;
     }
 
-    .membership-cards {
-        grid-template-columns: 1fr;
-        max-width: 500px;
-    }
-
     .popular {
         transform: none;
     }
@@ -648,3 +647,5 @@ footer p {
         padding: 20px;
     }
 }
+```
+
