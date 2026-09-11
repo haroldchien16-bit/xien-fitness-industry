@@ -77,16 +77,23 @@ header h1 {
     color: var(--muted-grey);
 }
 
+
+/* Navigation uses Flexbox */
+
 nav ul {
     display: flex;
-    gap: 30px;
+    gap: 20px;
+
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
+
+/* Flexbox replaces inline-block */
+
 nav li {
-    display: inline-block;
+    margin: 0;
 }
 
 nav a {
@@ -402,7 +409,7 @@ main > ul li {
 
 .popular {
     border: 2px solid var(--brand);
-       border-left: 5px solid var(--brand);
+    border-left: 5px solid var(--brand);
 
     transform: scale(1.03);
 }
