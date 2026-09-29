@@ -32,18 +32,23 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 80px;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: var(--dark);
-    color: var(--text);
-    line-height: 1.6;
+    min-height: 100vh;
+    height: auto;
 
-    /* CSS GRID PAGE SKELETON */
     display: grid;
 
-    grid-template-columns: 220px 1fr;
+    grid-template-columns: 220px minmax(0, 1fr);
+
+    /*
+       IMPORTANT:
+       The rows are AUTO so the main content
+       can grow as long as necessary.
+    */
+    grid-template-rows: auto auto auto;
 
     grid-template-areas:
         "masthead masthead"
@@ -52,7 +57,15 @@ body {
 
     gap: 0;
 
-    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: var(--dark);
+    color: var(--text);
+
+    line-height: 1.6;
+
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 img {
@@ -80,23 +93,18 @@ header {
     justify-content: space-between;
     align-items: center;
 
-    min-height: 78px;
+    width: 100%;
 
-    padding: 18px 6%;
+    padding: 18px 7%;
 
-    background: rgba(5, 5, 5, 0.97);
+    background: rgba(5, 5, 5, 0.96);
 
     border-bottom: 1px solid var(--border);
 
     backdrop-filter: blur(12px);
 }
 
-header h1 {
-    font-size: 24px;
-    font-weight: 900;
-    letter-spacing: 1.5px;
-}
-
+header h1,
 .logo {
     font-size: 24px;
     font-weight: 900;
@@ -107,14 +115,10 @@ header h1 {
     color: var(--muted);
 }
 
-
-/* =========================
-   NAVIGATION
-========================= */
-
 nav ul {
     display: flex;
     align-items: center;
+
     gap: 28px;
 
     list-style: none;
@@ -137,6 +141,7 @@ nav a::after {
     content: "";
 
     position: absolute;
+
     left: 0;
     bottom: -7px;
 
@@ -148,8 +153,7 @@ nav a::after {
     transition: 0.25s ease;
 }
 
-nav a:hover,
-nav a.active {
+nav a:hover {
     color: var(--white);
 }
 
@@ -166,17 +170,21 @@ nav a.active::after {
 aside {
     grid-area: side;
 
+    align-self: stretch;
+
     background: #080808;
 
     border-right: 1px solid var(--border);
 
-    padding: 35px 22px;
-
-    min-width: 0;
+    padding: 28px 16px;
 }
 
 .sidebar-section {
-    margin-bottom: 38px;
+    margin-bottom: 35px;
+}
+
+.sidebar-section:last-child {
+    margin-bottom: 0;
 }
 
 .sidebar-section h2 {
@@ -184,11 +192,12 @@ aside {
 
     color: var(--white);
 
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 900;
 
     text-transform: uppercase;
-    letter-spacing: 1px;
+
+    letter-spacing: 0.5px;
 }
 
 .sidebar-section ul {
@@ -196,47 +205,29 @@ aside {
 }
 
 .sidebar-section li {
-    margin-bottom: 9px;
+    margin-bottom: 12px;
+
+    color: var(--text-soft);
+
+    font-size: 13px;
 }
 
 .sidebar-section a {
-    display: block;
-
-    padding: 8px 10px;
-
-    color: var(--muted);
+    color: var(--text-soft);
 
     text-decoration: none;
 
-    border-radius: 6px;
-
-    font-size: 14px;
-
-    transition: 0.25s ease;
+    transition: 0.2s ease;
 }
 
 .sidebar-section a:hover {
     color: var(--white);
-
-    background: var(--dark-3);
-
-    padding-left: 14px;
-}
-
-.sidebar-section li:not(:has(a)) {
-    padding: 7px 10px;
-
-    color: var(--muted);
-
-    font-size: 14px;
 }
 
 .sidebar-section p {
-    padding: 10px;
+    color: var(--text-soft);
 
-    color: var(--muted);
-
-    font-size: 14px;
+    font-size: 13px;
 }
 
 
@@ -248,10 +239,11 @@ main {
     grid-area: main;
 
     width: 100%;
-
     min-width: 0;
+    height: auto;
+    min-height: 0;
 
-    overflow: hidden;
+    overflow: visible;
 }
 
 
@@ -276,11 +268,12 @@ main {
         linear-gradient(
             to bottom,
             rgba(0, 0, 0, 0.45),
-            rgba(5, 5, 5, 0.90)
+            rgba(5, 5, 5, 0.88)
         ),
         url("harold-chien-l.-santiago.jpg");
 
     background-size: cover;
+
     background-position: center;
 
     border-bottom: 1px solid var(--border);
@@ -314,19 +307,11 @@ main {
 .hero p {
     max-width: 650px;
 
-    margin: 0 auto 15px;
+    margin: 0 auto 35px;
 
     color: var(--text-soft);
 
     font-size: 19px;
-}
-
-.hero-subtext {
-    margin-bottom: 35px !important;
-
-    color: var(--muted) !important;
-
-    font-size: 16px !important;
 }
 
 
@@ -341,14 +326,17 @@ main {
     padding: 14px 26px;
 
     background: var(--white);
+
     color: var(--black);
 
     border: 1px solid var(--white);
+
     border-radius: 7px;
 
     text-decoration: none;
 
     font-weight: 800;
+
     font-size: 14px;
 
     transition:
@@ -372,43 +360,14 @@ main {
     margin-left: 10px;
 
     background: transparent;
+
     color: var(--white);
 }
 
 .order-button:hover {
     background: var(--white);
+
     color: var(--black);
-}
-
-
-/* =========================
-   GENERAL SECTION TITLE
-========================= */
-
-.section-title {
-    max-width: 800px;
-
-    margin: 0 auto 55px;
-
-    text-align: center;
-}
-
-.section-title h2 {
-    margin-bottom: 10px;
-
-    font-size: clamp(35px, 5vw, 52px);
-
-    line-height: 1.1;
-
-    text-transform: uppercase;
-
-    letter-spacing: -1px;
-}
-
-.section-title p {
-    color: var(--muted);
-
-    font-size: 17px;
 }
 
 
@@ -448,6 +407,37 @@ main {
 
 
 /* =========================
+   GENERAL SECTION TITLE
+========================= */
+
+.section-title {
+    max-width: 800px;
+
+    margin: 0 auto 55px;
+
+    text-align: center;
+}
+
+.section-title h2 {
+    margin-bottom: 10px;
+
+    font-size: clamp(35px, 5vw, 52px);
+
+    line-height: 1.1;
+
+    text-transform: uppercase;
+
+    letter-spacing: -1px;
+}
+
+.section-title p {
+    color: var(--muted);
+
+    font-size: 17px;
+}
+
+
+/* =========================
    WHAT WE OFFER
 ========================= */
 
@@ -455,27 +445,21 @@ main {
     padding: 100px 7%;
 
     background: var(--dark);
-
-    border-top: 1px solid var(--border);
 }
 
 .feature-grid {
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 24px;
-
     max-width: 1150px;
 
     margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 24px;
 }
 
 .feature-card {
-    flex: 1 1 240px;
-
-    min-height: 230px;
-
     padding: 32px;
 
     background: var(--card);
@@ -485,9 +469,9 @@ main {
     border-radius: 14px;
 
     transition:
-        transform 0.25s ease,
-        background 0.25s ease,
-        border-color 0.25s ease;
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease;
 }
 
 .feature-card:hover {
@@ -503,17 +487,17 @@ main {
 
     color: var(--muted);
 
-    font-size: 14px;
+    font-size: 13px;
 
     font-weight: 900;
 
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
 .feature-card h3 {
     margin-bottom: 12px;
 
-    font-size: 22px;
+    font-size: 23px;
 }
 
 .feature-card p {
@@ -581,6 +565,8 @@ main {
 
     align-items: stretch;
 
+    width: 100%;
+
     min-height: 270px;
 
     background: var(--card);
@@ -614,6 +600,8 @@ main {
 .product-card img {
     width: 320px;
 
+    min-width: 320px;
+
     min-height: 270px;
 
     object-fit: cover;
@@ -635,6 +623,8 @@ main {
 
 .membership-content {
     flex: 1;
+
+    min-width: 0;
 
     display: flex;
 
@@ -684,7 +674,7 @@ main {
    MOST POPULAR
 ========================= */
 
-.product-card.popular {
+.popular {
     border: 2px solid var(--white);
 
     border-left: 5px solid var(--white);
@@ -701,15 +691,27 @@ main {
         0 15px 45px rgba(0, 0, 0, 0.35);
 }
 
+/*
+   IMPORTANT:
+   This is absolutely positioned so it does
+   NOT become another Flexbox item beside
+   the image.
+*/
+
 .popular-label {
     position: absolute;
 
-    top: 18px;
-    right: 20px;
+    top: 14px;
+
+    right: 16px;
 
     z-index: 5;
 
     display: inline-block;
+
+    width: fit-content;
+
+    margin: 0;
 
     padding: 5px 11px;
 
@@ -738,21 +740,19 @@ main {
 }
 
 .why-grid {
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 24px;
-
     max-width: 1150px;
 
     margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 24px;
 }
 
 .why-card {
-    flex: 1 1 260px;
-
-    padding: 35px;
+    padding: 32px;
 
     background: var(--card);
 
@@ -760,11 +760,9 @@ main {
 
     border-radius: 14px;
 
-    text-align: center;
-
     transition:
-        transform 0.25s ease,
-        background 0.25s ease;
+        transform 0.3s ease,
+        background 0.3s ease;
 }
 
 .why-card:hover {
@@ -776,7 +774,7 @@ main {
 .why-card h3 {
     margin-bottom: 12px;
 
-    font-size: 25px;
+    font-size: 23px;
 }
 
 .why-card p {
@@ -791,9 +789,14 @@ main {
 ========================= */
 
 .quote-section {
-    padding: 100px 7%;
+    padding: 110px 7%;
 
-    background: var(--black);
+    background:
+        linear-gradient(
+            135deg,
+            #171717,
+            #080808
+        );
 
     border-top: 1px solid var(--border);
 
@@ -803,21 +806,23 @@ main {
 }
 
 .quote-content {
-    max-width: 900px;
+    max-width: 850px;
 
     margin: auto;
 }
 
 .quote {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 
-    color: var(--text-soft);
+    color: var(--white);
 
-    font-size: clamp(26px, 4vw, 42px);
+    font-size: clamp(30px, 5vw, 55px);
 
-    font-weight: 800;
+    font-weight: 900;
 
-    line-height: 1.25;
+    line-height: 1.15;
+
+    letter-spacing: -1px;
 }
 
 .quote-brand {
@@ -838,24 +843,22 @@ main {
 .steps-section {
     padding: 100px 7%;
 
-    background: var(--dark-2);
+    background: var(--dark);
 }
 
 .steps-grid {
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 24px;
-
     max-width: 1150px;
 
     margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 24px;
 }
 
 .step-card {
-    flex: 1 1 260px;
-
     padding: 32px;
 
     background: var(--card);
@@ -866,19 +869,21 @@ main {
 }
 
 .step-number {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 
-    color: var(--white);
+    color: var(--muted);
 
-    font-size: 30px;
+    font-size: 14px;
 
     font-weight: 900;
+
+    letter-spacing: 1px;
 }
 
 .step-card h3 {
     margin-bottom: 12px;
 
-    font-size: 22px;
+    font-size: 23px;
 }
 
 .step-card p {
@@ -895,70 +900,25 @@ main {
 .comparison-section {
     padding: 100px 7%;
 
-    background: var(--dark);
+    background: var(--dark-2);
 
     border-top: 1px solid var(--border);
+
+    border-bottom: 1px solid var(--border);
 }
 
 .comparison-table {
     width: 100%;
 
-    max-width: 1050px;
+    max-width: 1150px;
 
     margin: auto;
 
     overflow-x: auto;
-
-    border-radius: 12px;
-
-    border: 1px solid var(--border);
 }
 
 .comparison-table table {
-    width: 100%;
-
-    min-width: 650px;
-
-    border-collapse: collapse;
-
-    background: var(--card);
-}
-
-.comparison-table th {
-    background: var(--black);
-
-    color: var(--white);
-
-    font-size: 14px;
-
-    text-transform: uppercase;
-
-    letter-spacing: 0.5px;
-}
-
-.comparison-table th,
-.comparison-table td {
-    padding: 17px;
-
-    border: 1px solid var(--border);
-
-    text-align: center;
-}
-
-.comparison-table td {
-    color: var(--text-soft);
-}
-
-.comparison-table td:first-child {
-    text-align: left;
-
-    font-weight: 700;
-
-    color: var(--white);
-}
-
-.comparison-table tbody tr:hover {
-    background: var(--card-hover);
+    min-width: 700px;
 }
 
 
@@ -969,9 +929,7 @@ main {
 .faq-section {
     padding: 100px 7%;
 
-    background: var(--dark-2);
-
-    border-top: 1px solid var(--border);
+    background: var(--dark);
 }
 
 .faq-list {
@@ -981,23 +939,19 @@ main {
 }
 
 .faq-item {
-    margin-bottom: 16px;
+    padding: 25px 0;
 
-    padding: 28px 30px;
+    border-bottom: 1px solid var(--border);
+}
 
-    background: var(--card);
-
-    border: 1px solid var(--border);
-
-    border-radius: 12px;
+.faq-item:first-child {
+    border-top: 1px solid var(--border);
 }
 
 .faq-item h3 {
-    margin-bottom: 9px;
+    margin-bottom: 10px;
 
-    color: var(--white);
-
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .faq-item p {
@@ -1008,28 +962,28 @@ main {
 
 
 /* =========================
-   FINAL CTA
+   CTA
 ========================= */
 
 .cta-section {
-    padding: 110px 7%;
+    padding: 100px 7%;
 
     background:
         linear-gradient(
             135deg,
-            #171717,
-            #050505
+            #202020,
+            #0a0a0a
         );
 
     border-top: 1px solid var(--border);
-
-    text-align: center;
 }
 
 .cta-content {
-    max-width: 800px;
+    max-width: 900px;
 
     margin: auto;
+
+    text-align: center;
 }
 
 .cta-content h2 {
@@ -1043,9 +997,7 @@ main {
 }
 
 .cta-content p {
-    max-width: 650px;
-
-    margin: 0 auto 30px;
+    margin-bottom: 30px;
 
     color: var(--muted);
 
@@ -1058,28 +1010,24 @@ main {
 ========================= */
 
 .back-to-top {
-    padding: 30px;
+    display: block;
 
-    background: var(--black);
+    width: fit-content;
 
-    text-align: center;
+    margin: 30px auto;
 
-    border-top: 1px solid var(--border);
-}
-
-.back-to-top a {
-    color: var(--muted);
+    color: var(--text-soft);
 
     text-decoration: none;
 
     font-size: 13px;
 
-    font-weight: 800;
+    font-weight: 700;
 
-    transition: 0.25s ease;
+    transition: 0.2s ease;
 }
 
-.back-to-top a:hover {
+.back-to-top:hover {
     color: var(--white);
 }
 
@@ -1091,39 +1039,47 @@ main {
 footer {
     grid-area: foot;
 
-    padding: 55px 7% 25px;
+    width: 100%;
+
+    padding: 45px 7%;
 
     background: #030303;
 
     color: var(--muted);
 
     border-top: 1px solid var(--border);
+
+    text-align: center;
 }
 
 .footer-content {
-    display: flex;
-
-    justify-content: space-between;
-
-    gap: 50px;
-
     max-width: 1150px;
 
     margin: auto;
 
-    padding-bottom: 40px;
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: 40px;
+
+    text-align: left;
 }
 
 .footer-brand {
-    flex: 2;
+    max-width: 350px;
 }
 
 .footer-brand h2 {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 
     color: var(--white);
 
     font-size: 22px;
+
+    font-weight: 900;
 }
 
 .footer-brand p {
@@ -1133,25 +1089,25 @@ footer {
 }
 
 .footer-links {
-    flex: 1;
-
     display: flex;
 
-    flex-direction: column;
-
-    gap: 8px;
+    gap: 50px;
 }
 
 .footer-links h3 {
-    margin-bottom: 8px;
+    margin-bottom: 12px;
 
     color: var(--white);
 
     font-size: 14px;
+}
 
-    text-transform: uppercase;
+.footer-links ul {
+    list-style: none;
+}
 
-    letter-spacing: 1px;
+.footer-links li {
+    margin-bottom: 8px;
 }
 
 .footer-links a {
@@ -1159,33 +1115,39 @@ footer {
 
     text-decoration: none;
 
-    font-size: 14px;
+    font-size: 13px;
 
-    transition: 0.25s ease;
+    transition: 0.2s ease;
 }
 
 .footer-links a:hover {
     color: var(--white);
-
-    padding-left: 4px;
 }
 
 .footer-bottom {
-    display: flex;
-
-    justify-content: space-between;
-
-    gap: 20px;
-
     max-width: 1150px;
 
-    margin: auto;
+    margin: 35px auto 0;
 
     padding-top: 20px;
 
     border-top: 1px solid var(--border);
 
-    font-size: 13px;
+    color: var(--muted-dark);
+
+    font-size: 12px;
+
+    text-align: center;
+}
+
+footer p {
+    margin-bottom: 5px;
+}
+
+footer p:first-child {
+    color: var(--white);
+
+    font-weight: 700;
 }
 
 
@@ -1329,56 +1291,15 @@ td {
 
 
 /* =========================
-   PRODUCT PAGE SUPPORT
+   MOBILE PAGE SKELETON
 ========================= */
-
-main > h1,
-main > h2,
-main > p,
-main > img,
-main > table,
-main > ul,
-main > form {
-    max-width: 1100px;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 1000px) {
-
-    body {
-        grid-template-columns: 180px 1fr;
-    }
-
-    header {
-        padding: 18px 4%;
-    }
-
-    nav ul {
-        gap: 18px;
-    }
-
-    aside {
-        padding: 30px 15px;
-    }
-
-    .product-card img {
-        width: 280px;
-    }
-
-    .membership-content {
-        padding: 30px;
-    }
-}
-
 
 @media (max-width: 850px) {
 
     body {
         grid-template-columns: 1fr;
+
+        grid-template-rows: auto auto auto auto;
 
         grid-template-areas:
             "masthead"
@@ -1388,7 +1309,9 @@ main > form {
     }
 
     header {
-        position: relative;
+        position: sticky;
+
+        top: 0;
 
         flex-direction: column;
 
@@ -1403,17 +1326,21 @@ main > form {
         border-bottom: 1px solid var(--border);
 
         padding: 25px 5%;
+    }
 
+    .sidebar-section {
+        margin-bottom: 25px;
+    }
+
+    .sidebar-section ul {
         display: flex;
 
         flex-wrap: wrap;
 
-        gap: 20px;
+        gap: 10px 20px;
     }
 
-    .sidebar-section {
-        flex: 1 1 180px;
-
+    .sidebar-section li {
         margin-bottom: 0;
     }
 
@@ -1435,13 +1362,20 @@ main > form {
         letter-spacing: -2px;
     }
 
-    .membership-section,
     .features-section,
+    .membership-section,
     .why-section,
     .steps-section,
     .comparison-section,
-    .faq-section {
+    .faq-section,
+    .cta-section {
         padding: 80px 5%;
+    }
+
+    .feature-grid,
+    .why-grid,
+    .steps-grid {
+        grid-template-columns: 1fr;
     }
 
     .product-card {
@@ -1451,9 +1385,11 @@ main > form {
     .product-card img {
         width: 100%;
 
-        height: 260px;
+        min-width: 0;
 
-        min-height: 260px;
+        height: 240px;
+
+        min-height: 240px;
     }
 
     .membership-content {
@@ -1464,17 +1400,27 @@ main > form {
         width: 100%;
     }
 
-    .popular-label {
-        top: 18px;
+    .footer-content {
+        flex-direction: column;
 
-        right: 18px;
+        text-align: center;
+
+        align-items: center;
     }
 
-    .footer-content {
+    .footer-links {
+        justify-content: center;
+
         flex-wrap: wrap;
+
+        text-align: center;
     }
 }
 
+
+/* =========================
+   SMALL MOBILE
+========================= */
 
 @media (max-width: 600px) {
 
@@ -1492,17 +1438,20 @@ main > form {
     }
 
     aside {
-        display: block;
+        padding: 22px 20px;
     }
 
-    .sidebar-section {
-        margin-bottom: 25px;
+    .sidebar-section h2 {
+        font-size: 11px;
+    }
+
+    .sidebar-section li,
+    .sidebar-section p {
+        font-size: 12px;
     }
 
     .hero {
         min-height: 72vh;
-
-        padding: 70px 20px;
     }
 
     .hero h1 {
@@ -1535,12 +1484,7 @@ main > form {
         font-size: 32px;
     }
 
-    .membership-section,
-    .features-section,
-    .why-section,
-    .steps-section,
-    .comparison-section,
-    .faq-section {
+    .membership-section {
         padding: 70px 20px;
     }
 
@@ -1568,52 +1512,25 @@ main > form {
         padding: 25px 20px 30px;
     }
 
-    .feature-card,
-    .why-card,
-    .step-card {
-        padding: 25px;
-    }
+    .popular-label {
+        top: 12px;
 
-    .quote-section {
-        padding: 75px 25px;
-    }
+        right: 12px;
 
-    .quote {
-        font-size: 25px;
-    }
-
-    .cta-section {
-        padding: 80px 25px;
-    }
-
-    .cta-content h2 {
-        font-size: 34px;
-    }
-
-    .footer-content {
-        display: block;
-    }
-
-    .footer-brand,
-    .footer-links {
-        margin-bottom: 30px;
-    }
-
-    .footer-bottom {
-        display: block;
-
-        text-align: center;
-    }
-
-    .footer-bottom p {
-        margin-bottom: 8px;
-    }
-
-    form {
-        padding: 20px;
+        font-size: 10px;
     }
 
     fieldset {
         padding: 20px;
+    }
+
+    .quote {
+        font-size: 30px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+
+        gap: 25px;
     }
 }
