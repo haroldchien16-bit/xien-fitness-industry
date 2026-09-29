@@ -14,7 +14,7 @@
 <body>
 
     <!-- =========================
-         NAVIGATION
+         HEADER & NAVIGATION
     ========================= -->
 
     <header>
@@ -26,7 +26,7 @@
         <nav>
             <ul>
                 <li>
-                    <a href="index.html">Home</a>
+                    <a href="index.html" class="active">Home</a>
                 </li>
 
                 <li>
@@ -43,203 +43,763 @@
 
 
     <!-- =========================
-         HERO
+         SIDEBAR
     ========================= -->
 
-    <section class="hero">
+    <aside>
 
-        <div class="hero-content">
+        <div class="sidebar-section">
 
-            <h1>
-                Built <span>Different.</span>
-            </h1>
+            <h2>Quick Navigation</h2>
 
-            <p>
-                Where strength meets purpose.
-            </p>
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
 
-            <a
-                class="hero-button"
-                href="#memberships"
-            >
-                EXPLORE MEMBERSHIPS
-            </a>
+                <li>
+                    <a href="about.html">About</a>
+                </li>
 
-            <a
-                class="hero-button order-button"
-                href="products/monthly-membership.html"
-            >
-                ORDER ENQUIRY
-            </a>
+                <li>
+                    <a href="#memberships">Memberships</a>
+                </li>
+
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+            </ul>
 
         </div>
 
-    </section>
+
+        <div class="sidebar-section">
+
+            <h2>Membership Plans</h2>
+
+            <ul>
+                <li>
+                    <a href="#monthly">Monthly</a>
+                </li>
+
+                <li>
+                    <a href="#six-month">6-Month</a>
+                </li>
+
+                <li>
+                    <a href="#annual">Annual</a>
+                </li>
+            </ul>
+
+        </div>
+
+
+        <div class="sidebar-section">
+
+            <h2>Why Xien?</h2>
+
+            <ul>
+                <li>Affordable Plans</li>
+                <li>Flexible Options</li>
+                <li>Fitness-Focused</li>
+                <li>Goal-Oriented</li>
+            </ul>
+
+        </div>
+
+
+        <div class="sidebar-section">
+
+            <h2>Opening Hours</h2>
+
+            <p>
+                Monday - Saturday
+                <br>
+                8:00 AM - 8:00 PM
+            </p>
+
+        </div>
+
+    </aside>
 
 
     <!-- =========================
-         INTRO
+         MAIN CONTENT
     ========================= -->
 
-    <section class="intro">
+    <main>
 
-        <h2>
-            XIEN FITNESS INDUSTRY
-        </h2>
+        <!-- =========================
+             HERO
+        ========================= -->
 
-        <p>
-            A place for people who are ready to improve,
-            build strength, and become better every day.
-            Train with purpose. Stay consistent.
-            Become different.
-        </p>
+        <section class="hero">
 
-    </section>
+            <div class="hero-content">
+
+                <h1>
+                    Built <span>Different.</span>
+                </h1>
+
+                <p>
+                    Where strength meets purpose.
+                </p>
+
+                <p class="hero-subtext">
+                    Start your fitness journey with a plan
+                    built around your goals.
+                </p>
+
+                <a
+                    class="hero-button"
+                    href="#memberships"
+                >
+                    EXPLORE MEMBERSHIPS
+                </a>
+
+                <a
+                    class="hero-button order-button"
+                    href="products/monthly-membership.html"
+                >
+                    ORDER ENQUIRY
+                </a>
+
+            </div>
+
+        </section>
 
 
-    <!-- =========================
-         MEMBERSHIPS
-    ========================= -->
+        <!-- =========================
+             INTRO
+        ========================= -->
 
-    <section
-        class="membership-section"
-        id="memberships"
-    >
-
-        <div class="section-title">
+        <section class="intro">
 
             <h2>
-                Choose Your Membership
+                XIEN FITNESS INDUSTRY
             </h2>
 
             <p>
-                Find the plan that fits your goals.
+                A place for people who are ready to improve,
+                build strength, and become better every day.
+                Train with purpose. Stay consistent.
+                Become different.
             </p>
 
-        </div>
+        </section>
 
 
-        <!-- PRODUCT GRID -->
+        <!-- =========================
+             WHAT WE OFFER
+        ========================= -->
 
-        <div class="product-grid">
+        <section class="features-section">
 
-            <!-- MONTHLY -->
+            <div class="section-title">
 
-            <article class="product-card">
+                <h2>
+                    What We Offer
+                </h2>
 
-                <img
-                    src="monthly.jpg"
-                    alt="Monthly Membership"
-                >
+                <p>
+                    Simple fitness options built around
+                    consistency and progress.
+                </p>
 
-                <div class="membership-content">
+            </div>
+
+
+            <div class="feature-grid">
+
+                <article class="feature-card">
+
+                    <div class="feature-number">
+                        01
+                    </div>
 
                     <h3>
-                        Monthly Membership
+                        Strength Training
                     </h3>
 
-                    <p class="price">
-                        ₱500 / month
+                    <p>
+                        Build physical strength and improve
+                        your overall fitness through consistent
+                        training.
                     </p>
 
-                    <p class="description">
-                        Perfect for beginners and
-                        fitness enthusiasts who want
-                        flexible gym access.
+                </article>
+
+
+                <article class="feature-card">
+
+                    <div class="feature-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Fitness Development
+                    </h3>
+
+                    <p>
+                        Work toward better endurance,
+                        movement, and physical performance
+                        through regular training.
                     </p>
 
-                    <a
-                        class="membership-button"
-                        href="products/monthly-membership.html"
-                    >
-                        VIEW DETAILS
-                    </a>
-
-                </div>
-
-            </article>
+                </article>
 
 
-            <!-- SIX MONTH -->
+                <article class="feature-card">
 
-            <article class="product-card popular">
+                    <div class="feature-number">
+                        03
+                    </div>
 
-                <img
-                    src="six-month.jpg"
-                    alt="6-Month Membership"
+                    <h3>
+                        Goal-Focused Training
+                    </h3>
+
+                    <p>
+                        Choose a membership that fits your
+                        schedule and keeps you moving toward
+                        your fitness goals.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             MEMBERSHIPS
+        ========================= -->
+
+        <section
+            class="membership-section"
+            id="memberships"
+        >
+
+            <div class="section-title">
+
+                <h2>
+                    Choose Your Membership
+                </h2>
+
+                <p>
+                    Find the plan that fits your goals.
+                </p>
+
+            </div>
+
+
+            <!-- PRODUCT GRID -->
+
+            <div class="product-grid">
+
+
+                <!-- MONTHLY -->
+
+                <article
+                    class="product-card"
+                    id="monthly"
                 >
 
-                <div class="membership-content">
+                    <img
+                        src="monthly.jpg"
+                        alt="Monthly Membership"
+                    >
 
-                    <span class="popular-label">
+                    <div class="membership-content">
+
+                        <h3>
+                            Monthly Membership
+                        </h3>
+
+                        <p class="price">
+                            ₱500 / month
+                        </p>
+
+                        <p class="description">
+                            Perfect for beginners and
+                            fitness enthusiasts who want
+                            flexible gym access.
+                        </p>
+
+                        <a
+                            class="membership-button"
+                            href="products/monthly-membership.html"
+                        >
+                            VIEW DETAILS
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- SIX MONTH -->
+
+                <article
+                    class="product-card popular"
+                    id="six-month"
+                >
+
+                    <div class="popular-label">
                         MOST POPULAR
-                    </span>
+                    </div>
 
-                    <h3>
-                        6-Month Membership
-                    </h3>
-
-                    <p class="price">
-                        ₱4,999 / 6 months
-                    </p>
-
-                    <p class="description">
-                        Build consistency and improve
-                        your strength, endurance,
-                        and physique.
-                    </p>
-
-                    <a
-                        class="membership-button"
-                        href="products/6-month-membership.html"
+                    <img
+                        src="six-month.jpg"
+                        alt="6-Month Membership"
                     >
-                        VIEW DETAILS
-                    </a>
 
-                </div>
+                    <div class="membership-content">
 
-            </article>
+                        <h3>
+                            6-Month Membership
+                        </h3>
+
+                        <p class="price">
+                            ₱4,999 / 6 months
+                        </p>
+
+                        <p class="description">
+                            Build consistency and improve
+                            your strength, endurance,
+                            and physique.
+                        </p>
+
+                        <a
+                            class="membership-button"
+                            href="products/6-month-membership.html"
+                        >
+                            VIEW DETAILS
+                        </a>
+
+                    </div>
+
+                </article>
 
 
-            <!-- ANNUAL -->
+                <!-- ANNUAL -->
 
-            <article class="product-card">
-
-                <img
-                    src="annual.avif"
-                    alt="Annual Membership"
+                <article
+                    class="product-card"
+                    id="annual"
                 >
 
-                <div class="membership-content">
+                    <img
+                        src="annual.avif"
+                        alt="Annual Membership"
+                    >
+
+                    <div class="membership-content">
+
+                        <h3>
+                            Annual Membership
+                        </h3>
+
+                        <p class="price">
+                            ₱8,999 / year
+                        </p>
+
+                        <p class="description">
+                            Go all in with a full year
+                            of training and make fitness
+                            part of your lifestyle.
+                        </p>
+
+                        <a
+                            class="membership-button"
+                            href="products/annual-membership.html"
+                        >
+                            VIEW DETAILS
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             WHY XIEN
+        ========================= -->
+
+        <section class="why-section">
+
+            <div class="section-title">
+
+                <h2>
+                    Why Xien?
+                </h2>
+
+                <p>
+                    Fitness is more than just working out.
+                </p>
+
+            </div>
+
+
+            <div class="why-grid">
+
+                <article class="why-card">
 
                     <h3>
-                        Annual Membership
+                        Strength
                     </h3>
 
-                    <p class="price">
-                        ₱8,999 / year
+                    <p>
+                        Build your physical strength through
+                        regular training and consistent effort.
                     </p>
 
-                    <p class="description">
-                        Go all in with a full year
-                        of training and make fitness
-                        part of your lifestyle.
+                </article>
+
+
+                <article class="why-card">
+
+                    <h3>
+                        Consistency
+                    </h3>
+
+                    <p>
+                        Progress comes from showing up,
+                        staying committed, and keeping your
+                        routine going.
                     </p>
 
-                    <a
-                        class="membership-button"
-                        href="products/annual-membership.html"
-                    >
-                        VIEW DETAILS
-                    </a>
+                </article>
 
-                </div>
 
-            </article>
+                <article class="why-card">
+
+                    <h3>
+                        Purpose
+                    </h3>
+
+                    <p>
+                        Train with a clear reason and make
+                        every workout count toward your goals.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             BRAND STATEMENT
+        ========================= -->
+
+        <section class="quote-section">
+
+            <div class="quote-content">
+
+                <p class="quote">
+                    "Strength isn't built in one day.
+                    It's built through consistency."
+                </p>
+
+                <p class="quote-brand">
+                    XIEN FITNESS INDUSTRY
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             HOW IT WORKS
+        ========================= -->
+
+        <section class="steps-section">
+
+            <div class="section-title">
+
+                <h2>
+                    How It Works
+                </h2>
+
+                <p>
+                    Getting started is simple.
+                </p>
+
+            </div>
+
+
+            <div class="steps-grid">
+
+                <article class="step-card">
+
+                    <div class="step-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Choose Your Plan
+                    </h3>
+
+                    <p>
+                        Select the membership that works
+                        best for your schedule and goals.
+                    </p>
+
+                </article>
+
+
+                <article class="step-card">
+
+                    <div class="step-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Send an Enquiry
+                    </h3>
+
+                    <p>
+                        Use our Order Enquiry form to ask
+                        questions about your chosen plan.
+                    </p>
+
+                </article>
+
+
+                <article class="step-card">
+
+                    <div class="step-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Start Training
+                    </h3>
+
+                    <p>
+                        Begin your fitness journey and stay
+                        consistent with your training.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             MEMBERSHIP COMPARISON
+        ========================= -->
+
+        <section class="comparison-section">
+
+            <div class="section-title">
+
+                <h2>
+                    Membership Comparison
+                </h2>
+
+                <p>
+                    Compare the available membership options.
+                </p>
+
+            </div>
+
+
+            <div class="comparison-table">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Feature</th>
+                            <th>Monthly</th>
+                            <th>6-Month</th>
+                            <th>Annual</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Gym Access</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                        </tr>
+
+                        <tr>
+                            <td>Flexible Commitment</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                        </tr>
+
+                        <tr>
+                            <td>Long-Term Training</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                        </tr>
+
+                        <tr>
+                            <td>Goal-Focused Option</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FAQ
+        ========================= -->
+
+        <section class="faq-section">
+
+            <div class="section-title">
+
+                <h2>
+                    Frequently Asked Questions
+                </h2>
+
+                <p>
+                    Some quick answers about our memberships.
+                </p>
+
+            </div>
+
+
+            <div class="faq-list">
+
+                <article class="faq-item">
+
+                    <h3>
+                        How much is the monthly membership?
+                    </h3>
+
+                    <p>
+                        The monthly membership is ₱500 per month.
+                    </p>
+
+                </article>
+
+
+                <article class="faq-item">
+
+                    <h3>
+                        Do you offer longer memberships?
+                    </h3>
+
+                    <p>
+                        Yes. Xien Fitness Industry offers
+                        monthly, 6-month, and annual membership
+                        options.
+                    </p>
+
+                </article>
+
+
+                <article class="faq-item">
+
+                    <h3>
+                        How can I inquire about a membership?
+                    </h3>
+
+                    <p>
+                        You can use the Order Enquiry form or
+                        visit our Contact page for more information.
+                    </p>
+
+                </article>
+
+
+                <article class="faq-item">
+
+                    <h3>
+                        How can I contact Xien?
+                    </h3>
+
+                    <p>
+                        You can reach us through the Contact page
+                        and the social media accounts listed there.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FINAL CTA
+        ========================= -->
+
+        <section class="cta-section">
+
+            <div class="cta-content">
+
+                <h2>
+                    Ready to Start Training?
+                </h2>
+
+                <p>
+                    Your fitness journey starts with your
+                    first decision. Choose a plan and start
+                    working toward your goals.
+                </p>
+
+                <a
+                    class="hero-button"
+                    href="#memberships"
+                >
+                    VIEW MEMBERSHIPS
+                </a>
+
+                <a
+                    class="hero-button order-button"
+                    href="contact.html"
+                >
+                    CONTACT XIEN
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             BACK TO TOP
+        ========================= -->
+
+        <div class="back-to-top">
+
+            <a href="#">
+                ↑ BACK TO TOP
+            </a>
 
         </div>
 
-    </section>
+    </main>
 
 
     <!-- =========================
@@ -248,16 +808,80 @@
 
     <footer>
 
-        <p>
-            © 2026 Xien Fitness Industry
-        </p>
+        <div class="footer-content">
 
-        <p>
-            Where strength meets purpose.
-        </p>
+            <div class="footer-brand">
+
+                <h2>
+                    XIEN FITNESS INDUSTRY
+                </h2>
+
+                <p>
+                    Where strength meets purpose.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>
+                    Memberships
+                </h3>
+
+                <a href="#monthly">
+                    Monthly
+                </a>
+
+                <a href="#six-month">
+                    6-Month
+                </a>
+
+                <a href="#annual">
+                    Annual
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Xien Fitness Industry
+            </p>
+
+            <p>
+                All Rights Reserved.
+            </p>
+
+        </div>
 
     </footer>
 
 </body>
+
 </html>
 ```
