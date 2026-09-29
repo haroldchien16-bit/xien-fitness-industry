@@ -1,3 +1,4 @@
+```css
 /* =========================
    VARIABLES
 ========================= */
@@ -35,6 +36,18 @@ body {
     background: var(--dark-ink);
     color: var(--brand);
     line-height: 1.6;
+
+    /* PAGE SKELETON */
+    display: grid;
+
+    grid-template-columns: 220px 1fr;
+
+    grid-template-areas:
+        "masthead masthead"
+        "side     main"
+        "foot     foot";
+
+    gap: 16px;
 }
 
 img {
@@ -47,6 +60,8 @@ img {
 ========================= */
 
 header {
+    grid-area: masthead;
+
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -108,10 +123,65 @@ nav a:hover {
 
 
 /* =========================
+   SIDEBAR
+========================= */
+
+aside {
+    grid-area: side;
+
+    background: var(--card-background);
+
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+
+    padding: 25px;
+
+    margin-left: 20px;
+
+    height: fit-content;
+
+    position: sticky;
+    top: 100px;
+}
+
+aside h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+aside p {
+    color: var(--muted-grey);
+    margin-bottom: 25px;
+}
+
+aside ul {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+aside li {
+    margin-bottom: 12px;
+}
+
+aside a {
+    color: var(--light-grey);
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+aside a:hover {
+    color: var(--brand);
+}
+
+
+/* =========================
    MAIN
 ========================= */
 
 main {
+    grid-area: main;
+
     width: 100%;
 }
 
@@ -305,7 +375,7 @@ main > ul li {
 
 /* =========================
    PRODUCT GRID
-   CARDS STACK VERTICALLY
+   FLEXBOX
 ========================= */
 
 .product-grid {
@@ -322,6 +392,7 @@ main > ul li {
 
 /* =========================
    HORIZONTAL PRODUCT CARD
+   FLEXBOX
 ========================= */
 
 .product-card {
@@ -595,6 +666,8 @@ td {
 ========================= */
 
 footer {
+    grid-area: foot;
+
     text-align: center;
 
     padding: 40px 20px;
@@ -617,9 +690,26 @@ footer p {
 
 @media (max-width: 850px) {
 
+    body {
+        grid-template-columns: 1fr;
+
+        grid-template-areas:
+            "masthead"
+            "side"
+            "main"
+            "foot";
+    }
+
     header {
         flex-direction: column;
         gap: 15px;
+    }
+
+    aside {
+        margin-left: 20px;
+        margin-right: 20px;
+
+        position: static;
     }
 
     nav ul {
@@ -701,3 +791,4 @@ footer p {
         padding: 20px;
     }
 }
+```
